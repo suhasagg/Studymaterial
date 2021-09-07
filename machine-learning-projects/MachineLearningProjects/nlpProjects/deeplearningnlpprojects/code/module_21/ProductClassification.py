@@ -124,7 +124,9 @@ for word, i in word_index.items():
     if word in word2vec.vocab:
         embedding_matrix[i] = word2vec.word_vec(word)
 print('Null word embeddings: %d' % np.sum(np.sum(embedding_matrix, axis=1) == 0))
-
+#Optimisation of embedding layers using different embedding variants 
+#1)sentence transformer based (twitter,wikipedia)
+#2)word2vec (twitter,wikipedia,conceptnet)
 embedding_layer = Embedding(embedding_matrix.shape[0],  # or len(word_index) + 1
                             embedding_matrix.shape[1],  # or EMBEDDING_DIM,
                             weights=[embedding_matrix],
