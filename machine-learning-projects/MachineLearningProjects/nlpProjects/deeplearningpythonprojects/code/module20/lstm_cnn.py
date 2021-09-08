@@ -18,6 +18,7 @@ max_review_length = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_review_length)
 X_test = sequence.pad_sequences(X_test, maxlen=max_review_length)
 # create the model
+#Experiment to do
 #Below optimisation -
 #embedding_matrix = np.zeros((nb_words, EMBEDDING_DIM))
 #for word, i in word_index.items():
