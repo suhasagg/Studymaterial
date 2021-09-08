@@ -18,6 +18,21 @@ max_review_length = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_review_length)
 X_test = sequence.pad_sequences(X_test, maxlen=max_review_length)
 # create the model
+#Below optimisation -
+#embedding_matrix = np.zeros((nb_words, EMBEDDING_DIM))
+#for word, i in word_index.items():
+#    if word in word2vec.vocab:
+#        embedding_matrix[i] = word2vec.word_vec(word)
+#print('Null word embeddings: %d' % np.sum(np.sum(embedding_matrix, axis=1) == 0))
+#Optimisation of embedding layers using different embedding variants
+#1)sentence transformer based (twitter,wikipedia)
+#2)word2vec (twitter,wikipedia,conceptnet)
+#embedding_layer = Embedding(embedding_matrix.shape[0],  # or len(word_index) + 1
+#                            embedding_matrix.shape[1],  # or EMBEDDING_DIM,
+#
+#
+#
+#
 embedding_vecor_length = 32
 model = Sequential()
 model.add(Embedding(top_words, embedding_vecor_length, input_length=max_review_length))
