@@ -15,6 +15,9 @@ const (
 
 type Batch struct {
 	MaxBatchSize int
+	//More refined implementation of standard data structures can improve implementation
+	//https://github.com/Workiva/go-datastructures
+	//https://github.com/timtadh/data-structures
 	Queue        []int
 	Duration     time.Duration
 	Out          chan []int
